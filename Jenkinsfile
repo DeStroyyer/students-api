@@ -35,5 +35,14 @@ environment {
                 }
             }
         }
+
+        stage('DEPLOYMENT') {
+            steps {
+                script {
+                    input message: 'Approve deployment?', ok: 'Deploy'
+                    sh "echo 'Deploying application...'"
+                }
+            }
+        }
     }
 }
