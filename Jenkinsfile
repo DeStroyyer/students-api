@@ -36,7 +36,15 @@ environment {
             }
         }
 
-        stage('DEPLOYMENT') {
+        stage('DEPLOYMENT to stage') {
+            steps {
+                script {
+
+                    sh "echo 'Deploying application to stage ...'"
+                }
+            }
+        }
+         stage('DEPLOYMENT to PROD') {
             steps {
                 script {
                     input message: 'Approve deployment?', ok: 'Deploy'
