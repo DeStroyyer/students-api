@@ -42,7 +42,7 @@ environment {
 
                     sh "docker pull ${DOCKER_IMAGE}:latest"
                     sh "echo 'Deploying to staging environment...'"
-                    sh "docker run -d -p 8080:8080 ${DOCKER_IMAGE}:latest"
+                    sh "docker run -d -p 8000:8000 ${DOCKER_IMAGE}:latest"
                 }
             }
         }
