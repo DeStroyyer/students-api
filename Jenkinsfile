@@ -2,8 +2,8 @@ pipeline {
     agent any
 
 environment {
-        DOCKERFILE_CREDS_ID = 'dockerhub-id'
-        DEPLOY_IMAGE = 'destroyyer/students-api'
+        DOCKERFILE_CREDS_ID_123 = 'dockerhub-id'
+        DOCKER_IMAGE = 'destroyyer/students-api'
     }
 
     stages {
@@ -15,7 +15,7 @@ environment {
         stage('BUILD Docker Image') {
             steps {
                 script {
-                    docker.build(DEPLOY_IMAGE)
+                    docker.build(DOCKER_IMAGE)
                 }
             }
         }
@@ -29,8 +29,8 @@ environment {
         stage('Push Docker Image') {
             steps {
                 script {
-                    docker.withRegistry('', DOCKERFILE_CREDS_ID) {
-                        docker.image(DEPLOY_IMAGE).push()
+                    docker.withRegistry('', DOCKERFILE_CREDS_ID_123) {
+                        docker.image(DOCKER_IMAGE).push()
                     }
                 }
             }
