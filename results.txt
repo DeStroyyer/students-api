@@ -1,0 +1,5 @@
+[{"age":" 55","first_name":"Arnold","id":"3","last_name":"Schwarzenegger"},{"age":"78","first_name":"Tom","id":"4","last_name":"Henks"},{"age":"78","first_name":"Tom","id":"5","last_name":"Henks"}]
+
+{"error":"Student with id 2 not found"}
+
+Student was deleted
