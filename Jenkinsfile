@@ -40,7 +40,9 @@ environment {
             steps {
                 script {
 
-                    sh "echo 'Deploying application to stage ...'"
+                    sh "docker pull ${DOCKER_IMAGE}:latest"
+                    sh "echo 'Deploying to staging environment...'"
+                    sh "docker run -d -p 8080:8080 ${DOCKER_IMAGE}:latest"
                 }
             }
         }
